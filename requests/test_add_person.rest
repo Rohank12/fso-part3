@@ -1,4 +1,4 @@
-POST http://localhost:3001/api/persons
+POST http://localhost:3001/api/persons/
 Content-Type: application/json
 
 {
@@ -18,5 +18,6 @@ POST http://localhost:3001/api/persons/
 Content-Type: application/json
 
 {
-  "number": "35-22-5134523"
+  "name": "F",
+  "number": "35-51434523"
 }
