@@ -25,20 +25,20 @@ const Person = mongoose.model('Person', personSchema)
 const argv = process.argv
 
 if (argv.length === 3) {
-    console.log('phonebook:')
-    Person.find({}).then(result => {
-        result.forEach(person => {
-        console.log(person.name, person.number)
-        })
-        mongoose.connection.close()
+  console.log('phonebook:')
+  Person.find({}).then(result => {
+    result.forEach(person => {
+      console.log(person.name, person.number)
     })
+    mongoose.connection.close()
+  })
 } else if (argv.length === 5) {
-    const person = new Person({
-        name: argv[3],
-        number: argv[4],
-    })
-    person.save().then(result => {
-        console.log('added', result.name, result.number, 'to phonebook')
-        mongoose.connection.close()
-    })
+  const person = new Person({
+    name: argv[3],
+    number: argv[4],
+  })
+  person.save().then(result => {
+    console.log('added', result.name, result.number, 'to phonebook')
+    mongoose.connection.close()
+  })
 }
